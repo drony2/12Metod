@@ -42,7 +42,7 @@ public class Main {
                     break;
 
                 case 4:
-                    editUserById(2, "Anna", 30);
+                    editUserId(2, "Anna", 30);
                     System.out.println("\n \n");
                     break;
 
@@ -66,7 +66,7 @@ public class Main {
                     break;
 
                 case 8:
-                    multiplyAges();
+                    increaseAges();
                     System.out.println("\n \n");
                     break;
 
@@ -81,7 +81,7 @@ public class Main {
                     break;
 
                 case 11:
-                    checkNameStartsWithJ();
+                    checkNameJ();
                     System.out.println("\n \n");
                     break;
 
@@ -128,16 +128,16 @@ public class Main {
 
         user.ifPresentOrElse(
                 u -> System.out.println(u.getName()),
-                () -> System.out.println("User not found")
+                () -> System.out.println("Такого нет")
         );
     }
 
     public static void addUser(User user) {
         users.add(user);
-        System.out.println("User added: " + user.getName());
+        System.out.println("Добавлен: " + user.getName());
     }
 
-    public static void editUserById(int id, String newName, int newAge) {
+    public static void editUserId(int id, String newName, int newAge) {
         Optional<User> user = users.stream()
                 .filter(u -> u.getId() == id)
                 .findFirst();
@@ -145,7 +145,7 @@ public class Main {
         user.ifPresent(u -> {
             u.name = newName;
             u.age = newAge;
-            System.out.println("User updated: " + u.getName());
+            System.out.println("Пользователь обновлен: " + u.getName());
         });
 
 
@@ -158,7 +158,7 @@ public class Main {
 
         user.ifPresent(u -> {
             users.remove(u);
-            System.out.println("User deleted: " + u.getName());
+            System.out.println("Пользователь удален: " + u.getName());
         });
     }
 
@@ -175,13 +175,13 @@ public class Main {
                 .forEach(System.out::println);
     }
 
-    public static void multiplyAges() {
+    public static void increaseAges() {
         int result = users.stream()
                 .filter(u -> u.getAge() > 20)
                 .mapToInt(User::getAge)
                 .reduce(1, (a, b) -> a * b);
 
-        System.out.println("Result: " + result);
+        System.out.println("Результат: " + result);
     }
 
     public static void getMinAge() {
@@ -200,7 +200,7 @@ public class Main {
         maxAge.ifPresent(System.out::println);
     }
 
-    public static void checkNameStartsWithJ() {
+    public static void checkNameJ() {
         boolean exists = users.stream()
                 .map(User::getName)
                 .anyMatch(name -> name.startsWith("J"));
