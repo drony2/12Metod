@@ -37,7 +37,7 @@ public class Main {
                     break;
 
                 case 3:
-                    addUser(new User(11, "John", 25));
+                    addUser(new User(11, "Kira", 25));
                     System.out.println("\n \n");
                     break;
 
@@ -106,13 +106,13 @@ public class Main {
         users.add(new User(1, "John", 25));
         users.add(new User(2, "Alex", 30));
         users.add(new User(3, "Mary", 20));
-        users.add(new User(4, "David", 35));
-        users.add(new User(5, "Kate", 28));
+        users.add(new User(4, "Dasha", 35));
+        users.add(new User(5, "Ksenia", 28));
         users.add(new User(6, "Jason", 22));
-        users.add(new User(7, "Jessica", 32));
+        users.add(new User(7, "Jared", 32));
         users.add(new User(8, "Daniel", 19));
-        users.add(new User(9, "Sarah", 27));
-        users.add(new User(10, "Luke", 24));
+        users.add(new User(9, "SaSha", 27));
+        users.add(new User(10, "Lora", 24));
     }
 
     public static void getAllUsers() {
